@@ -6,6 +6,77 @@
     --dark: #04000B;
 }
 
+/* Fonts */
+
+/*
+ * Quicksand
+================================================================================ */
+@font-face {
+    font-family: "Quicksand-regular";
+    src: url("../css/fonts/Quicksand/Quicksand-Regular.ttf") format("truetype"), url("../css/fonts/Quicksand/Quicksand-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Quicksand-bold";
+    src: url("../css/fonts/Quicksand/Quicksand-Bold.ttf") format("truetype"), url("../css/fonts/Quicksand/Quicksand-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Quicksand-light";
+    src: url("../css/fonts/Quicksand/Quicksand-Light.ttf") format("truetype"), url("../css/fonts/Quicksand/Quicksand-Light.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Quicksand-extrabold";
+    src: url("../css/fonts/Quicksand/Quicksand-ExtraBold.ttf") format("truetype"), url("../css/fonts/Quicksand/Quicksand-ExtraBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Quicksand-medium";
+    src: url("../css/fonts/Quicksand/Quicksand-Medium.ttf") format("truetype"), url("../css/fonts/Quicksand/Quicksand-Medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+/*
+ * Montserrat
+================================================================================ */
+@font-face {
+    font-family: "Montserrat-regular";
+    src: url("../css/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype"), url("../css/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Montserrat-bold";
+    src: url("../css/fonts/Montserrat/Montserrat-Bold.ttf") format("truetype"), url("../css/fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Montserrat-light";
+    src: url("../css/fonts/Montserrat/Montserrat-Light.ttf") format("truetype"), url("../css/fonts/Montserrat/Montserrat-Light.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Montserrat-extrabold";
+    src: url("../css/fonts/Montserrat/Montserrat-ExtraBold.ttf") format("truetype"), url("../css/fonts/Montserrat/Montserrat-ExtraBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Montserrat-medium";
+    src: url("../css/fonts/Montserrat/Montserrat-Medium.ttf") format("truetype"), url("../css/fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+
 
 /*** Spinner ***/
 #spinner {
@@ -29,6 +100,18 @@
     z-index: 99;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat-bold', sans-serif;
+}
+
+p {
+    font-family: 'Quicksand-regular', sans-serif;
+}
+
+.letter-spacing {
+    letter-spacing: 1px;
+}
+
 
 /*** Heading ***/
 h1,
@@ -48,6 +131,8 @@ h6,
 .fw-medium {
     font-weight: 500 !important;
 }
+
+
 
 
 /*** Button ***/
@@ -102,7 +187,7 @@ h6,
     position: relative;
     margin-right: 25px;
     padding: 35px 0;
-    font-family: 'Jost', sans-serif;
+    font-family: 'Quicksand-regular', sans-serif;
     font-size: 18px;
     font-weight: 500;
     color: var(--light) !important;
@@ -293,6 +378,11 @@ h6,
 .section-title.text-white span:first-child::after,
 .section-title.text-white span:last-child::after {
     background: #FFFFFF;
+}
+
+/* HTML / CSS / Web */
+.fa-html {
+    background-image:  url(../img/html-icon.jpg;)
 }
 
 
