@@ -24,6 +24,20 @@
             $('.navbar').removeClass('sticky-top shadow-sm');
         }
     });
+
+    //Click functionality for service boxes
+
+    $(document).on("click", ".flip-container", function () {
+        $(this).toggleClass('hover');
+    });
+
+    $('.service-item-container a.btn').on("click", function(event) {
+        event.preventDefault();
+        $(this).parent().toggleClass('active');
+        $(this).siblings('.flip-container').toggleClass('hover');
+    });
+    
+
     
     
     // Back to top button

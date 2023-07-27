@@ -406,6 +406,10 @@ h6,
     transition: 3s;
 }
 
+.py-5 {
+    padding-top: 0 !important;
+}
+
 
 /*** Fact ***/
 .fact {
@@ -427,6 +431,41 @@ h6,
 
 
 /*** Service ***/
+
+.service-item-container {
+    position: relative;
+}
+
+.service-item-container.active a.btn {
+    color: var(--dark);
+    background: var(--secondary);
+    transition: .5s;
+}
+
+.service-item-container.active a.btn i {
+        transform: rotateY(180deg);
+        padding: 0 5px 0 0;
+        transition: .5s;
+}
+
+.flip-container.hover .service-item {
+    margin-top: -15px;
+    padding-bottom: 60px;
+    background: var(--primary);
+} 
+
+.flip-container.hover .service-item .service-icon {
+    color: var(--dark);
+    background: url(../img/blob-secondary.png) center center no-repeat;
+    background-size: contain;
+} 
+
+.flip-container.hover .service-item h5,
+.flip-container.hover .service-item p {
+    color: #FFFFFF;
+}
+
+
 .service-item {
     position: relative;
     padding: 45px 30px;
@@ -470,26 +509,73 @@ h6,
     color: #FFFFFF;
 }
 
-.service-item a.btn {
+.service-item-container a.btn {
     position: absolute;
-    bottom: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--primary);
-    background: #FFFFFF;
-    border-radius: 40px 40px 0 0;
-    transition: .5s;
+    bottom: -30px;
+    right: 40px;
+    width: 65px;
+    height: 65px;
+    color: #ffffff;
+    background: var(--primary);
+    border-radius: 50%;
     z-index: 1;
+    transition: .5s;
+    font-family:'Quicksand-bold', sans-serif;
 }
 
-.service-item a.btn:hover {
+.service-item-container a.btn i { 
+    padding: 0 0 0 5px;
+    
+}
+
+.service-item-container a.btn:hover {
     color: var(--dark);
     background: var(--secondary);
 }
 
-.service-item:hover a.btn {
-    bottom: 0;
+.service-item-container:hover a.btn {
+    color: var(--dark);
+    background: var(--secondary);
 }
+
+/* Fipper */
+
+::-ms-fill-upper
+.flip-container {
+    perspective: 1000px;
+  }
+  
+  .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+  }
+  
+  .flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+  /* .front,
+  .back {
+    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+  } */
+
+  .flip-container.hover .flipper .front {
+    display: none;
+  }
+  .front {
+    z-index: 2;
+    transform: rotateY(0deg);
+  }
+
+  .flip-container.hover .flipper .back {
+    display: block;
+  }
+  .back {
+    display: none;
+    transform: rotateY(180deg);
+  }
 
 
 /*** Project Portfolio ***/
