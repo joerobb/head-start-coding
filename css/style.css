@@ -460,9 +460,19 @@ h6,
     background-size: contain;
 } 
 
+.service-item-container a.btn:hover + .flip-container .service-item .service-icon {
+    color: var(--dark);
+    background: url(../img/blob-secondary.png) center center no-repeat;
+    background-size: contain;
+}
+
 .flip-container.hover .service-item h5,
 .flip-container.hover .service-item p {
     color: #FFFFFF;
+}
+
+.service-item-container a.btn:hover + .flip-container .service-item h5, .service-item-container a.btn:hover + .flip-container .service-item p {
+    color: #ffffff;
 }
 
 
@@ -474,7 +484,7 @@ h6,
     transition: .5s;
 }
 
-.service-item:hover {
+.service-item-container a.btn:hover + .flip-container .service-item, .service-item:hover {
     margin-top: -15px;
     padding-bottom: 60px;
     background: var(--primary);
@@ -536,7 +546,30 @@ h6,
 .service-item-container:hover a.btn {
     color: var(--dark);
     background: var(--secondary);
+
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+	transform: scale(1);
+	animation: pulse 2s infinite;
 }
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.9);
+		box-shadow: 0 0 0 0.25rem rgba(239, 171, 11, 0.25);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.9);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}
+
+
 
 /* Fipper */
 
@@ -618,6 +651,15 @@ h6,
 
 .portfolio-item:hover .portfolio-overlay {
     opacity: 1;
+}
+
+Why Container 
+
+.why-container p, .why-container h1 {
+ color: #fff;
+}
+.why-container .intro-container {
+ background-color: #fff;
 }
 
 
