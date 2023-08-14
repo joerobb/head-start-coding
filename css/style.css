@@ -359,6 +359,7 @@ h6,
     left: -20px;
 }
 
+
 .section-title.text-primary span:first-child,
 .section-title.text-primary span:last-child,
 .section-title.text-primary span:first-child::after,
@@ -373,11 +374,22 @@ h6,
     background: var(--secondary);
 }
 
+.section-title.text-secondary-light span:first-child,
+.section-title.text-secondary-light span:last-child,
+.section-title.text-secondary-light span:first-child::after,
+.section-title.text-secondary-light span:last-child::after {
+    background: #f9ca73;
+}
+
 .section-title.text-white span:first-child,
 .section-title.text-white span:last-child,
 .section-title.text-white span:first-child::after,
 .section-title.text-white span:last-child::after {
     background: #FFFFFF;
+}
+
+.section-title.text-secondary-light {
+    color: #f9ca73;
 }
 
 /* HTML / CSS / Web */
@@ -407,7 +419,7 @@ h6,
 }
 
 .py-5 {
-    padding-top: 0 !important;
+    padding-top: 2rem;
 }
 
 
