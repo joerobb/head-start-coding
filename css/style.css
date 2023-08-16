@@ -76,7 +76,46 @@
     font-weight: normal;
 }
 
+/* Overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #6222CC;
+    z-index: 100;
+    transition: visibility 0.5s, opacity 0.5s linear;
+}
 
+.overlay.active {
+    display: block;
+    transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+.navbar-collapse {
+    z-index: 1000;
+    transition: .5s ease-out;
+}
+
+.navbar-close {
+    display: none;
+    z-index: 1000;
+    background: transparent;
+    border: none;
+    transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+
+.navbar-close span {
+    font-size: 35px;
+}
+.navbar-close span:before {
+    color: #fff;
+}
 
 /*** Spinner ***/
 #spinner {
@@ -173,6 +212,13 @@ h6,
 
 
 /*** Navbar ***/
+
+.navbar-light .navbar-toggler {
+    font-size: 2rem;
+    border: none;
+    color: #fff; 
+}
+
 .navbar .dropdown-toggle::after {
     border: none;
     content: "\f067";
@@ -202,7 +248,8 @@ h6,
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
-    color: var(--secondary) !important;
+    color: #ffffff !important;
+    font-weight: bold;
 }
 
 .navbar-light .navbar-brand h1 {
@@ -224,24 +271,28 @@ h6,
         background: #FFFFFF;
     }
 
-    .navbar-light .navbar-collapse {
-        margin-top: 15px;
-        border-top: 1px solid #DDDDDD;
-    }
-
     .navbar-light .navbar-nav .nav-link,
     .sticky-top.navbar-light .navbar-nav .nav-link {
         padding: 10px 0;
         margin-left: 0;
-        color: var(--dark) !important;
+        color: #fff !important;
     }
 
     .navbar-light .navbar-brand h1 {
         color: var(--primary);
     }
 
-    .navbar-light .navbar-brand img {
-        max-height: 45px;
+    .navbar-light .navbar-brand .logo-white {
+        display: none;
+    }
+    .navbar-light .navbar-brand .logo-color {
+        max-height: 75px;
+        width: 75px;
+    }
+
+    .navbar {
+        position: absolute;
+        width: 100%;
     }
 }
 
@@ -316,7 +367,12 @@ h6,
 
 @media (max-width: 991.98px) {
     .hero-header {
-        padding: 6rem 0 9rem 0;
+        padding: 10rem 0 0;
+        margin: 0 0 40px;
+    }
+
+    .navbar-collapse {
+        margin-top: -30px;
     }
 }
 

@@ -15,6 +15,18 @@
     // Initiate the wowjs
     new WOW().init();
 
+    //Overlay js
+
+    $('.navbar .navbar-toggler').on("click", function() {
+        $('.container-xxl .overlay').toggle(300);
+        $('.navbar .navbar-close').toggle();
+    });
+
+    $('.navbar .navbar-close').on("click", function() {
+        $('.container-xxl .overlay').toggle(500);
+        $('.navbar-collapse').toggleClass('show');
+        $(this).toggle(100);
+    });
 
     // Sticky Navbar
     $(window).scroll(function () {
