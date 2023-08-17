@@ -17,25 +17,60 @@
 
     //Overlay js
 
-    $('.navbar .navbar-toggler').on("click", function() {
-        $('.container-xxl .overlay').toggle(300);
-        $('.navbar .navbar-close').toggle();
-    });
-
-    $('.navbar .navbar-close').on("click", function() {
-        $('.container-xxl .overlay').toggle(500);
-        $('.navbar-collapse').toggleClass('show');
-        $(this).toggle(100);
+    $(document).ready(function() {
+        var $navbarToggler = $('.navbar .navbar-toggler');
+        var $navbarClose = $('.navbar .navbar-close');
+        var $navbarCollapse = $('.navbar-collapse');
+        var $overlay = $('.container-xxl .overlay');
+    
+        $navbarToggler.on("click", function() {
+            $overlay.toggle(300);
+            $navbarClose.toggle();
+        });
+    
+        $navbarClose.on("click", function() {
+            $overlay.toggle(500);
+            $navbarCollapse.toggleClass('show');
+            $(this).toggle(100);
+        });
+    
+        $('.navbar .navbar-collapse .navbar-nav a').on("click", function() {
+            $overlay.toggle(500);
+            $navbarCollapse.toggleClass('show');
+            $navbarClose.toggle();
+        });
     });
 
     // Sticky Navbar
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 45) {
-            $('.navbar').addClass('sticky-top shadow-sm');
-        } else {
-            $('.navbar').removeClass('sticky-top shadow-sm');
-        }
-    });
+
+    if($('#mobile-indicator').is(':visible')) {
+
+    } else {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 45) {
+                $('.navbar').addClass('sticky-top shadow-sm');
+            } else {
+                $('.navbar').removeClass('sticky-top shadow-sm');
+            }
+        });
+    }
+
+    //Rotate logo on scroll
+
+    $(document).ready(function(){
+        var bodyHeight = $("body").height()-$(window).height();
+        window.onscroll = function() {
+     
+           //Determine the amount to rotate by.
+           var deg = -window.scrollY*(720/bodyHeight);
+     
+           $(".sticky-top.navbar-light .logo-color img").css({
+             "transform": "rotate("+deg+"deg)",
+           });
+     
+        };
+     });
+ 
 
     //Click functionality for service boxes
 

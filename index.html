@@ -34,6 +34,7 @@
 
 <body>
     <div class="container-xxl bg-white p-0">
+
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -44,12 +45,19 @@
 
         <div class="overlay" id="#overlayCollapse"></div>
 
+        <div id="mobile-indicator"></div>
+
         <!-- Navbar & Hero Start -->
         <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="" class="navbar-brand p-0">
+                <a href="" class="navbar-brand p-0 logo-mobile">
+                    <img src="img/logos/Icon_White.svg" class="logo-mobile" alt="Logo">
+                </a>
+                <a href="" class="navbar-brand p-0 logo-white">
                     <img src="img/logos/Logo_FullLong_White.png" class="logo-white" alt="Logo">
-                    <img src="img/logos/Icon_White.svg" class="logo-color" alt="Logo">
+                </a>
+                <a href="" class="navbar-brand p-0 logo-color">
+                    <img src="img/logos/Icon_Purple.svg" class="logo-color" alt="Logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -60,9 +68,9 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav mx-auto py-0">
                         <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Service</a>
-                        <a href="project.html" class="nav-item nav-link">Project</a>
+                        <a href="#why" class="nav-item nav-link">Why</a>
+                        <a href="#when" class="nav-item nav-link">When</a>
+                        <a href="project.html" class="nav-item nav-link">When</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
@@ -87,7 +95,7 @@
                             <a href="" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
                         </div>
                         <div class="col-lg-6 text-center text-lg-start">
-                            <img class="img-fluid animated zoomIn" src="img/gallery.png" alt="">
+                            <img class="img-fluid animated zoomIn gallery-img" src="img/gallery.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -130,7 +138,7 @@
 
 
         <!-- About Start -->
-        <div class="container-xxl py-1">
+        <div class="container-xxl py-1" id="when">
             <div class="container py-1 px-lg-5">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -187,7 +195,7 @@
 
 
         <!-- Facts Start -->
-        <div class="container-xxl why-container bg-primary fact py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div id="why" class="container-xxl why-container bg-primary fact py-5 wow fadeInUp" data-wow-delay="0.1s">
             <div class="container py-2 px-lg-5">
                 <div class="row g-4">
                     <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
