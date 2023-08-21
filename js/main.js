@@ -33,18 +33,23 @@
             $navbarCollapse.toggleClass('show');
             $(this).toggle(100);
         });
-    
-        $('.navbar .navbar-collapse .navbar-nav a').on("click", function() {
-            $overlay.toggle(500);
-            $navbarCollapse.toggleClass('show');
-            $navbarClose.toggle();
-        });
     });
 
     // Sticky Navbar
 
     if($('#mobile-indicator').is(':visible')) {
-
+        $('.navbar .navbar-collapse .navbar-nav a').on("click", function() {
+            $overlay.toggle(500);
+            $navbarCollapse.toggleClass('show');
+            $navbarClose.toggle();
+        });
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 45) {
+                $('.navbar').removeClass('sticky-top shadow-sm');
+            } else {
+                $('.navbar').removeClass('sticky-top shadow-sm');
+            }
+        });
     } else {
         $(window).scroll(function () {
             if ($(this).scrollTop() > 45) {
@@ -62,7 +67,7 @@
         window.onscroll = function() {
      
            //Determine the amount to rotate by.
-           var deg = -window.scrollY*(720/bodyHeight);
+           var deg = window.scrollY*(720/bodyHeight);
      
            $(".sticky-top.navbar-light .logo-color img").css({
              "transform": "rotate("+deg+"deg)",
