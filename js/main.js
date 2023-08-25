@@ -26,12 +26,14 @@
         $navbarToggler.on("click", function() {
             $overlay.toggle(300);
             $navbarClose.toggle();
+            $(this).hide();
         });
     
         $navbarClose.on("click", function() {
             $overlay.toggle(500);
             $navbarCollapse.toggleClass('show');
             $(this).toggle(100);
+            $navbarToggler.show();
         });
     });
 

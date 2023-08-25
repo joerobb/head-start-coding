@@ -86,7 +86,9 @@
     bottom: 0;
     width: 100%;
     height: 100%;
-    background: #6222CC;
+    background: url(../img/blob-top-right.png), url(../img/blob-center.png) #6222CC;
+    background-position: right 0px top 0px, left 130px top 44%;
+    background-repeat: no-repeat;
     z-index: 100;
     transition: visibility 0.5s, opacity 0.5s linear;
 }
@@ -118,6 +120,7 @@
     background: transparent;
     border: none;
     transition: visibility 0.5s, opacity 0.5s linear;
+    margin: 0px 8px 0px 0px;
 }
 
 
@@ -232,6 +235,16 @@ h6,
 
 /*** Navbar ***/
 
+.navbar {
+    padding-left: 0 !important;
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        padding-left: 1rem !important;
+    }
+}
+
 .navbar-light .navbar-toggler {
     font-size: 2rem;
     border: none;
@@ -284,6 +297,10 @@ h6,
     max-height: 45px;
 }
 
+ul.logos {
+    margin: 0;
+}
+
 @media (max-width: 991.98px) {
     .sticky-top.navbar-light {
         position: relative;
@@ -333,6 +350,7 @@ h6,
     .sticky-top.navbar-light {
         position: fixed;
         background: #FFFFFF;
+        padding-top: 3px !important;
     }
 
     .sticky-top.navbar-light .navbar-brand h1 {
@@ -354,14 +372,24 @@ h6,
         left: 0;
     }
 
-    .navbar-light .logo-color {
-        display: block;
-        position: absolute;
-        top: 2px;
-        left: 50px;
+    .navbar-light .logo-color,  .navbar-light .logo-color-text {
+        display: none;
     }
 
+   .sticky-top.navbar-light .logo-color-text {
+        display: block;
+        position: absolute;
+        top: 8px;
+        left: 35px;
+        max-height: 21px !important;
+        width: auto;
+    }
+
+    .sticky-top.navbar-light .logo-color {
+        display: block;
+    }
     .sticky-top.navbar-light .logo-color img{
+        display: block !important;
         width: 125px;
         max-height: 60px;
     }
@@ -397,7 +425,7 @@ h6,
 
 /*** Hero Header ***/
 .hero-header {
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
     padding: 12rem 0;
     background:
         url(../img/blob-top-left.png),
@@ -424,6 +452,7 @@ h6,
 
     .navbar-collapse {
         margin-top: -30px;
+        padding-left: 30px;
     }
 }
 
@@ -432,6 +461,28 @@ h6,
             padding: 0 0 120px;
         }
     }
+
+
+/* Model Styling */
+.model-img-container {
+    margin-top: 23px;
+}
+
+@media (max-width: 991.98px) {
+
+.model-info {
+    margin-top: 0 !important;
+    text-align: center;
+}
+
+}
+
+.model-img-title {
+    margin: 0;
+    z-index: 1;
+    position: relative;
+    display: block;
+}
 
 
 
@@ -533,7 +584,7 @@ h6,
 }
 
 .py-5 {
-    padding-top: 2rem;
+    padding-top: 1rem !important;
 }
 
 
