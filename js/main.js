@@ -16,25 +16,27 @@
     new WOW().init();
 
     //Overlay js
+    var $navbarToggler = $('.navbar .navbar-toggler');
+    var $navbarClose = $('.navbar .navbar-close');
+    var $navbarCollapse = $('.navbar-collapse');
+    var $nav = $('.navbar-collapse .navbar-nav a');
+    var $overlay = $('.container-xxl .overlay');
 
-    $(document).ready(function() {
-        var $navbarToggler = $('.navbar .navbar-toggler');
-        var $navbarClose = $('.navbar .navbar-close');
-        var $navbarCollapse = $('.navbar-collapse');
-        var $overlay = $('.container-xxl .overlay');
-    
-        $navbarToggler.on("click", function() {
-            $overlay.toggle(300);
-            $navbarClose.toggle();
-            $(this).hide();
-        });
-    
-        $navbarClose.on("click", function() {
-            $overlay.toggle(500);
-            $navbarCollapse.toggleClass('show');
-            $(this).toggle(100);
-            $navbarToggler.show();
-        });
+    $navbarToggler.on("click", function() {
+        $overlay.toggle(300);
+        $navbarClose.toggle();
+        $(this).hide();
+    });
+
+    $navbarClose.on("click", function() {
+        $overlay.toggle(500);
+        $navbarCollapse.toggleClass('show');
+        $(this).toggle(100);
+        $navbarToggler.show();
+    });
+
+    $nav.on("click", function() {
+        $navbarToggler.show();
     });
 
     // Sticky Navbar
