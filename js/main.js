@@ -89,10 +89,27 @@
         $(this).siblings('.flip-container').toggleClass('hover');
     });
 
-    
+    //Modal javascript
 
-    
-    
+    const $modal = $(".modal");
+    const $trigger = $(".trigger");
+    const $closeButton = $(".close-button");
+
+    function toggleModal() {
+        $modal.toggleClass("show-modal");
+    }
+
+    function windowOnClick(event) {
+        if (event.target === $modal[0]) {
+            toggleModal();
+        }
+    }
+
+    $trigger.click(toggleModal);
+    $closeButton.click(toggleModal);
+    $(window).click(windowOnClick);
+
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
