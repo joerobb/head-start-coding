@@ -486,6 +486,33 @@ ul.logos {
 
 /* Modal Styling */
 
+.model-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 0 25px;
+}
+
+.model-container h5 {
+    width: 75%;
+    margin-bottom: 0 !important;
+}
+
+.model-container button {
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+}
+
+.model-container button i {
+    font-size: 35px;
+}
+
+.model-container button .fa-circle-info:before { 
+    color: #6222CC;
+}
+
 .modal {
     position: fixed;
     left: 0;
@@ -510,14 +537,21 @@ ul.logos {
     border-radius: 0.5rem;
 }
 
+.modal-content h5 {
+    width: 100%;
+    margin: 40px 0 30px !important;
+}
+
 .close-button {
     float: right;
     width: 1.5rem;
     line-height: 1.5rem;
     text-align: center;
     cursor: pointer;
-    border-radius: 0.25rem;
-    background-color: lightgray;
+    color: #6222CC;
+    position: absolute;
+    right: 20px;
+    font-size: 40px;
 }
 
 .close-button:hover {
