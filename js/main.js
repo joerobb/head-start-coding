@@ -20,24 +20,114 @@
     var $navbarClose = $('.navbar .navbar-close');
     var $navbarCollapse = $('.navbar-collapse');
     var $nav = $('.navbar-collapse .navbar-nav a');
-    var $overlay = $('.container-xxl .overlay');
+    var $overlay = $('.overlay');
 
-    $navbarToggler.on("click", function() {
-        $overlay.toggle(300);
-        $navbarClose.toggle();
-        $(this).hide();
+    //Show overlay
+
+    $navbarToggler.click(function(event) {
+         // Get the center point of the screen
+         var x = window.innerWidth / 2;
+         var y = window.innerHeight / 2;
+ 
+         // Calculate the maximum radius to cover the entire screen
+         var maxRadius = Math.sqrt(x * x + y * y);
+ 
+         // Show the modal overlay
+         $overlay.show();
+ 
+         anime({
+         targets: $overlay[0],
+         clipPath: ['circle(0% at ' + x + 'px ' + y + 'px)', 'circle(' + maxRadius + 'px at ' + x + 'px ' + y + 'px)'],
+         duration: 1000, // Adjust the duration as needed
+         easing: 'linear'
+         });
+      
+        $navbarClose.toggle(); // Toggle the close button
+        $(this).hide(); // Hide the toggle button
+      });
+
+
+    //Hide Overlay
+    $navbarClose.click(function(event) {
+        var x = event.pageX;
+        var y = event.pageY;
+      
+        anime({
+          targets: $overlay[0], // Use [0] to access the DOM element from the jQuery object
+          clipPath: ['circle(100% at ' + x + 'px ' + y + 'px)', 'circle(0% at ' + x + 'px ' + y + 'px)'],
+          duration: 500, // Animation duration in milliseconds
+          easing: 'linear',
+          complete: function() {
+            // Hide the overlay when the animation is complete
+            $overlay.hide();
+          }
+        });
+      
+        $navbarCollapse.toggleClass('show'); // Toggle the collapse class
+        $(this).toggle(100); // Hide the close button
+        $navbarToggler.show(); // Show the toggle button
     });
 
-    $navbarClose.on("click", function() {
-        $overlay.toggle(500);
-        $navbarCollapse.toggleClass('show');
-        $(this).toggle(100);
-        $navbarToggler.show();
-    });
 
     $nav.on("click", function() {
         $navbarToggler.show();
     });
+      
+    //Modal JS
+
+    const $modalOverlay = $(".modal-overlay");
+    const $trigger = $(".trigger");
+    const $closeButton = $(".close-button");
+
+    $trigger.click(function(event) {
+        // Get the center point of the screen
+        var x = window.innerWidth / 2;
+        var y = window.innerHeight / 2;
+
+        // Find the closest modal that is a sibling of the clicked trigger
+        const $modal = $(this).siblings(".modal");
+
+        // Calculate the maximum radius to cover the entire screen
+        var maxRadius = Math.sqrt(x * x + y * y);
+
+        // Show the modal overlay
+        $modalOverlay.show();
+
+        anime({
+        targets: $modalOverlay[0],
+        clipPath: ['circle(0% at ' + x + 'px ' + y + 'px)', 'circle(' + maxRadius + 'px at ' + x + 'px ' + y + 'px)'],
+        duration: 1000, // Adjust the duration as needed
+        easing: 'linear'
+        });
+
+        $modal.slideToggle( "slow" );
+    });
+
+    $closeButton.click(function() {
+        // Get the center point of the screen
+        var x = window.innerWidth / 2;
+        var y = window.innerHeight / 2;
+
+        const $modal = $(this).closest(".modal");
+    
+        // Calculate the maximum radius to cover the entire screen
+        var maxRadius = Math.sqrt(x * x + y * y);
+
+        anime({
+          targets: $modalOverlay[0],
+          clipPath: ['circle(' + maxRadius + 'px at ' + x + 'px ' + y + 'px)', 'circle(0% at ' + x + 'px ' + y + 'px)'],
+          duration: 1000, // Adjust the duration as needed
+          easing: 'linear',
+          complete: function() {
+            // Hide the modal overlay when the animation is complete
+            $modalOverlay.hide();
+          }
+        });
+
+        $modal.slideToggle( "slow" );
+    });
+   
+
 
     // Sticky Navbar
 
@@ -91,23 +181,54 @@
 
     //Modal javascript
 
-    const $modal = $(".modal");
-    const $trigger = $(".trigger");
-    const $closeButton = $(".close-button");
 
-    function toggleModal() {
-        $modal.toggleClass("show-modal");
-    }
 
-    function windowOnClick(event) {
-        if (event.target === $modal[0]) {
-            toggleModal();
-        }
-    }
 
-    $trigger.click(toggleModal);
-    $closeButton.click(toggleModal);
-    $(window).click(windowOnClick);
+    // $trigger.click(function(event) {
+    //     var x = event.pageX;
+    //     var y = event.pageY;
+      
+    //     $overlay.toggle(500); 
+
+    //     anime({
+    //       targets: $overlay,
+    //       update: function(anim) {
+    //         $overlay.css('clip-path', 'circle(' + (anim.progress * 2) + '% at ' + x + 'px ' + y + 'px)');
+    //       }
+    //     });
+
+    //     $modal.toggle(500)
+    // });
+
+
+
+
+    //   $trigger.click(function() {
+    //     $overlay.show();
+    //   });
+      
+    //   $closeButton.click(function() {
+    //     $overlay.hide();
+    //   });
+      
+        // $navbarCollapse.toggleClass('show'); // Toggle the collapse class
+        // $(this).toggle(100); // Hide the close button
+        // $navbarToggler.show(); // Show the toggle button
+    // });
+
+    // function toggleModal() {
+    //     $modal.toggleClass("show-modal");
+    // }
+
+    // function windowOnClick(event) {
+    //     if (event.target === $modal[0]) {
+    //         toggleModal();
+    //     }
+    // }
+
+    // $trigger.click(toggleModal);
+    // $closeButton.click(toggleModal);
+    // $(window).click(windowOnClick);
 
 
     // Back to top button

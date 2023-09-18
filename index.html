@@ -33,7 +33,8 @@
 </head>
 
 <body>
-    <div class="container-xxl bg-white p-0">
+    <div class="overlay" id="overlayCollapse"></div>
+    <div class="container-xxl bg-white p-0 homepage">
 
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -43,7 +44,7 @@
         </div>
         <!-- Spinner End -->
 
-        <div class="overlay" id="overlayCollapse"></div>
+        
 
         <div id="mobile-indicator"></div>
 
@@ -95,7 +96,7 @@
                     <div class="row g-5 align-items-center">
                         <div class="col-lg-6 text-center text-lg-start">
                             <h1 class="text-white mb-4 animated slideInDown letter-spacing">Helping young people start coding</h1>
-                            <p class="text-white pb-3 animated slideInDown">"Teaching kids to code is just as important as teaching them any other language and the earlier they start learning it, the better" - Tim Cook, CEO Apple</p>
+                            <p class="text-white pb-3 animated slideInDown">"Teaching kids to code is just as important as teaching them any other language and the earlier they start learning it, the better" <br />Tim Cook, CEO Apple</p>
                             <a href="" class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Let's Go</a>
                             <a href="" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
                         </div>
@@ -148,7 +149,8 @@
                     <p class="section-title text-primary justify-content-center"><span></span>How it works<span></span></p>
                     <h1 class="text-center mb-5 model-img-title">Our Model</h1>
                 </div>
-                <div class="row g-5 align-items-center">
+                <div class="row g-5 align-items-center course-container">
+                    <div class="modal-overlay"></div>
                     <div class="col-lg-8 model-img-container">
                         <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="img/group-learning.jpg">
                     </div>
@@ -157,34 +159,44 @@
                             <h5 class="mb-4 model-sub-title">Online learning with a quality tutor</h5>
                             <button class="trigger"><i class="fa-solid fa-circle-info"></i></button>
                             <div class="modal">
-                            <div class="modal-content">
                                 <span class="close-button">&times;</span>
-                                <h5>Our coding instructors are not only skilled but also great at explaining complex concepts to new learners.
-                                    Our instructors are also well-versed in using AI to enhance the learning experience.</h5>
-                            </div>
+                                <h5>Professional Instructors</h5>
+                                <p>Learning to code can be very challenging, especially if you are trying to learn by yourself. 
+                                    Our tutors are not only highly skilled and knowledgeable in various programming languages 
+                                    but can help students grasp complex concepts in an easily understandable manner.  
+                                    With proven industry experience they can provide real-world insights, making the learning 
+                                    journey both practical and insightful. With their guidance, students not only gain technical 
+                                    expertise but also develop problem-solving skills, critical thinking, and the ability to adapt to the 
+                                    ever-evolving tech landscape. Our tutors are committed to ensuring that every student reaches their full 
+                                    coding potential, making learning with us an inspiring and transformative experience.</p>
                             </div>
                         </div>
                         <div class="model-container">
-                            <h5 class="mb-4 model-sub-title">12 week programme</h5>
+                            <h5 class="mb-4 model-sub-title">12 Week Interactive Programme</h5>
                             <button class="trigger"><i class="fa-solid fa-circle-info"></i></button>
                             <div class="modal">
-                            <div class="modal-content">
                                 <span class="close-button">&times;</span>
-                                <h5>Our coding instructors are not only skilled but also great at explaining complex concepts to new learners.
-                                    Our instructors are also well-versed in using AI to enhance the learning experience.</h5>
-                            </div>
-                            </div>
+                                <h5>Hands-on Learning</h5>
+                                <p>Our 12-week coding courses are thoughtfully designed to provide an immersive and comprehensive learning experience. 
+                                    With two 45-minute lessons per week, students benefit from focused, interactive sessions in small, supportive groups. 
+                                    Beyond the online classroom, our program encourages hands-on learning through coding challenges and various projects, 
+                                    allowing students to apply their newfound skills creatively. These projects serve as a showcase of their achievements, 
+                                    not only for themselves but also for family and friends, adding an extra layer of motivation and pride in their coding journey. 
+                                    This holistic approach ensures that our students not only acquire technical expertise but also the confidence and practical 
+                                    experience needed to excel in the world of programming.</p>
+                            </div> 
                         </div>
                         <div class="model-container">
                             <h5 class="mb-4 model-sub-title">Learn with AI</h5>
                             <button class="trigger"><i class="fa-solid fa-circle-info"></i></button>
                             <div class="modal">
-                            <div class="modal-content">
                                 <span class="close-button">&times;</span>
-                                <h5>Our coding instructors are not only skilled but also great at explaining complex concepts to new learners.
-                                    Our instructors are also well-versed in using AI to enhance the learning experience.</h5>
-                            </div>
-                            </div>
+                                <h5>Unleash AI</h5>
+                                <p>Our coding lessons go beyond the ordinary by introducing students to the incredible world of AI-driven problem-solving.
+                                   Alongside learning to code, students will discover how to harness the power of artificial intelligence to debug, optimize, and streamline their code.
+                                   This innovative approach equips them with valuable skills to tackle real-world challenges in the ever-evolving tech landscape.
+                                   With AI as on their side, students become proficient not only in coding but also in leveraging cutting-edge technology to become agile problem solvers.</p>
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -674,9 +686,13 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
 
-    <!-- Template Javascript -->
+
+
+
+    <!-- Main Javascript File -->
     <script src="js/main.js"></script>
 </body>
 
