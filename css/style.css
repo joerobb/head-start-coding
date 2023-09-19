@@ -162,6 +162,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
     font-family: 'Quicksand-regular', sans-serif;
+    color: #3A3B3C;
 }
 
 .letter-spacing {
@@ -465,12 +466,15 @@ ul.logos {
         }
     }
 
+/* Modal Styling */
 
-/* Model Styling */
-/* 
-.course-container {
-    position: relative;
-} */
+ .course-container {
+    margin: 0 0 30px;
+} 
+
+.course-desc {
+    margin-bottom: 2rem;
+}
 
 
 .model-img-container {
@@ -487,7 +491,7 @@ ul.logos {
 }
 
 .model-img-title {
-    margin: 0;
+    margin: 0 0 -2rem !important;
     z-index: 1;
     position: relative;
     display: block;
@@ -522,6 +526,11 @@ ul.logos {
     margin-bottom: 0 !important;
 }
 
+@media (min-width: 750px) { 
+    .model-container h5 {
+        font-size: 26px;
+    }
+}
 
 .model-container button {
     padding: 0;
@@ -557,11 +566,21 @@ ul.logos {
     width: 100%;
     margin: 40px 0 20px !important;
     color: #fff;
+    padding: 0 20px;
 }
 
 .modal p {
     line-height: 33px;
     font-size: 18px;
+}
+
+@media (min-width: 750px) { 
+    .modal p {
+        line-height: 35px;
+        font-size: 20px;
+        padding: 0 20px;
+        text-align: left;
+    }
 }
 
 .modal .close-button {
@@ -706,6 +725,7 @@ ul.logos {
 
 .service-item-container {
     position: relative;
+    margin: 0 0 50px;
 }
 
 .service-item-container.active a.btn {
