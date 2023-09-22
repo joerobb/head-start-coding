@@ -600,6 +600,20 @@ ul.logos {
     line-height: 33px;
     font-size: 18px;
     color: #fff;
+    text-align: left;
+}
+
+.modal .course-list {
+    padding: 0;
+    text-align: left;
+}
+.modal .course-list li {
+    list-style: none;
+    line-height: 33px;
+    font-size: 18px;
+    color: #fff;
+    font-family: 'Quicksand-Medium';
+    margin: 0 0 20px;
 }
 
 @media (min-width: 750px) { 
@@ -627,6 +641,10 @@ ul.logos {
     background-color: darkgray;
 }
 
+
+.age-image {
+    margin: 0 !important;
+}
 
 /*** Section Title ***/
 .section-title {
@@ -732,7 +750,7 @@ ul.logos {
 
 /*** Fact ***/
 .fact {
-    margin: 6rem 0;
+    margin: 1rem 0;
     background:
         url(../img/blob-top-left.png),
         url(../img/blob-top-right.png),
