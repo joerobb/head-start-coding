@@ -476,6 +476,33 @@ ul.logos {
     margin-bottom: 2rem;
 }
 
+.courses-container {
+    display: flex;
+    align-items: flex-start;
+    margin: 0 0 25px;
+}
+
+.courses-container h5 {
+    width: 75%;
+    margin-bottom: 10px !important;
+}
+
+.courses-container i {
+    font-size: 35px;
+    color: var(--secondary);
+    margin: 0 0 0 10px;
+}
+
+@media (min-width: 750px) { 
+    .model-container h5 {
+        font-size: 26px;
+    }
+
+    .courses-container {
+        width: 33.3%;
+    }
+}
+
 
 .model-img-container {
     margin-top: 23px;
@@ -572,6 +599,7 @@ ul.logos {
 .modal p {
     line-height: 33px;
     font-size: 18px;
+    color: #fff;
 }
 
 @media (min-width: 750px) { 
@@ -725,7 +753,7 @@ ul.logos {
 
 .service-item-container {
     position: relative;
-    margin: 0 0 50px;
+    margin: 0 0 60px;
 }
 
 .service-item-container.active a.btn {
