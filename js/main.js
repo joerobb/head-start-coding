@@ -181,56 +181,6 @@
 
     //Modal javascript
 
-
-
-
-    // $trigger.click(function(event) {
-    //     var x = event.pageX;
-    //     var y = event.pageY;
-      
-    //     $overlay.toggle(500); 
-
-    //     anime({
-    //       targets: $overlay,
-    //       update: function(anim) {
-    //         $overlay.css('clip-path', 'circle(' + (anim.progress * 2) + '% at ' + x + 'px ' + y + 'px)');
-    //       }
-    //     });
-
-    //     $modal.toggle(500)
-    // });
-
-
-
-
-    //   $trigger.click(function() {
-    //     $overlay.show();
-    //   });
-      
-    //   $closeButton.click(function() {
-    //     $overlay.hide();
-    //   });
-      
-        // $navbarCollapse.toggleClass('show'); // Toggle the collapse class
-        // $(this).toggle(100); // Hide the close button
-        // $navbarToggler.show(); // Show the toggle button
-    // });
-
-    // function toggleModal() {
-    //     $modal.toggleClass("show-modal");
-    // }
-
-    // function windowOnClick(event) {
-    //     if (event.target === $modal[0]) {
-    //         toggleModal();
-    //     }
-    // }
-
-    // $trigger.click(toggleModal);
-    // $closeButton.click(toggleModal);
-    // $(window).click(windowOnClick);
-
-
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
