@@ -1065,6 +1065,11 @@ ul.logos {
 }
 
 
+#contact div div div p a.mobile-number {
+    color: #fff !important;
+}
+
+
 /*** Newsletter ***/
 .newsletter {
     margin: 6rem 0;
