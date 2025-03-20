@@ -94,7 +94,445 @@
 }
 
 
+/* Intro Container */
 
+.hide {
+    display: none;
+}
+
+.container-intro-form {
+    width: 100%;
+    max-width: 100% !important;
+    background:#1a1a2e;
+}
+
+
+.intro-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.intro-center {
+    text-align: center;
+}
+
+.intro-container .model-info .model-container:before {
+    display: none;
+}
+
+.intro-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-box h2 {
+    color: #fff;
+    line-height: 42px;
+}
+
+.intro-box .yes-no-box {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+@media (min-width: 920px) {
+
+    .sign-up-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .intro-title {
+       text-align: center;
+    } 
+}
+
+@media (min-width: 767px) {
+    .intro-box .yes-no-box {
+    justify-content: space-around;
+    max-width: 600px;
+    margin: 50px auto;
+    }
+
+    .trigger {
+    max-width: 250px;
+    }
+}
+
+.intro-container .service-item {
+    background-color:#6222CC;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .3);
+}
+
+.intro-container .service-item .service-icon {
+    color: var(--dark);
+    background: url(../img/blob-secondary.png) center center no-repeat;
+    background-size: contain;
+   
+}
+
+.intro-container .service-item-container a.btn {
+    color: var(--dark);
+    background: var(--secondary);
+    transition: .5s;
+}
+
+.trigger {
+    display: inline-block;
+    width: 48%;
+    padding: 12px 24px !important;
+    margin: 0 10px !important;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 2px solid !important;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+.trigger:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+.trigger-yes {
+    color: #4ade80;
+    border-color: #4ade80 !important;
+}
+.trigger-no {
+    color: #f87171;
+    border-color: #f87171 !important;
+}
+.trigger-yes:hover {
+    background-color: #4ade80 !important;
+    color: #000;
+    box-shadow: 0 0 15px #4ade80;
+}
+.trigger-no:hover {
+    background-color: #f87171 !important;
+    color: #000;
+    box-shadow: 0 0 15px #f87171;
+}
+
+.trigger-next, .trigger-restart, .trigger-home, .trigger-email {
+    border-color: #fff !important; 
+    margin: 50px auto 0 !important;
+    color: #fff;
+    background-color: transparent !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.trigger-restart, .trigger-home, .trigger-email { 
+    width: 235px;
+}
+
+.trigger-next:hover, .trigger-restart:hover, .trigger-home:hover, .trigger-email:hover, .cta-button:hover { 
+    box-shadow: 0 0 15px #fff !important;
+    color: #fff !important;
+}
+
+.no-options-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+
+@media (max-width: 800px) {
+    .trigger-next {
+        box-shadow: 0 0 5px #531dad;
+    }
+}
+
+.stat-box {
+    margin-bottom: 25px;
+}
+
+@media (min-width: 767px) {
+   .intro-stats-container {
+    width: 100% !important;
+   }
+
+   .intro-stats-container p {
+    text-align: center !important;
+   }
+}
+
+
+.service-item-container-intro {
+    margin: 50px 0 70px !important;
+}
+
+.service-item-container-intro .flip-container.hover .service-item {
+    padding: 10px 30px 60px !important;
+}
+
+.intro-form-flip-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+@media (min-width: 767px) {
+    .intro-form-flip-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0 50px;
+        justify-content: center;
+    }
+
+    .intro-form-flip-container .service-item-container-intro {
+        margin: 50px 0 20px !important;
+    }
+ }
+
+/* .progress-dots {
+    margin-top: 15px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background-color: #8e44ad;
+} */
+
+
+.testimonial-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+}
+
+.testimonial-slider {
+    position: relative;
+    width: 85%;
+    overflow: hidden;
+    margin: 20px 0 0;
+}
+
+.testimonial {
+    display: none;
+    padding: 20px;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    min-height: 150px;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.testimonial.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+button.prev-btn, button.next-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+button.prev-btn { left: -10px; }
+button.next-btn { right: -10px; }
+
+.dots-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dots-container .dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.dots-container .dot.active {
+    opacity: 1;
+}
+
+.cta-section {
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.cta-subtext {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.cta-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 920px) {
+
+    .cta-subtext {
+        text-align: center !important;
+        font-size: 25px !important;
+    }
+
+ }
+
+
+
+#fireworks-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Allows clicks to pass through */
+    z-index: 9999; /* Ensures fireworks are on top */
+}
+
+
+
+
+
+
+
+
+
+/* Pixel Animation */
+
+/* Container */
+.pixel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  /* Grid */
+  .pixel-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 30px);
+    grid-template-rows: repeat(6, 30px);
+    gap: 3px;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Pixel Animation */
+  .pixel {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(45deg, #ff6f61, #ffd700);
+    border-radius: 3px;
+    opacity: 0;
+    animation: appear 0.5s forwards;
+    animation-delay: var(--delay);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Message */
+  .message {
+    font-size: 1.8rem;
+    font-family: 'Montserrat-bold', sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    animation-delay: 2.7s;
+  }
+  
+  /* Animations */
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: scale(0.8) rotate(15deg);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+  /* Typewriter Styles */
+
+  .typewriter {
+    margin: 30px 0;
+  }
+
+  .typewriter h1 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid white; /* The typwriter cursor */
+    white-space: nowrap;
+    color: var(--secondary);
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+  }
 
 /* .overlay.active {
     display: block;
@@ -1063,6 +1501,7 @@ ul.logos {
 .why-container .intro-container {
  background-color: #fff;
 }
+
 
 
 #contact div div div p a.mobile-number {
