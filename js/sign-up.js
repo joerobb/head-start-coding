@@ -173,7 +173,7 @@ function showModal(initialColor, transitionColor) {
      // 👇 Delay scroll slightly to give DOM/animations time to settle
      setTimeout(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        console.log('scroll happening now')
+        console.log('scroll happening now 2500!')
     }, 2500);
 }
 
