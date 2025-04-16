@@ -137,6 +137,9 @@ var maxRadius = Math.sqrt(x * x + y * y);
 
 function showModal(initialColor, transitionColor) {
     // Show the modal overlay with animation
+
+    // 🔼 Scroll to top immediately
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     
     $modalOverlay.show();
     $modal.css({ display: "block", opacity: 1 });
@@ -177,6 +180,9 @@ function showNoModal(initialColor, transitionColor) {
         showNextQuestion();
         return;
     }
+
+    // 🔼 Scroll to top immediately
+     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     // Show the modal overlay with animation
     $modalOverlay.show();
@@ -411,10 +417,6 @@ $triggerYes.click(function () {
     const initialColor = "rgba(46, 204, 113, 0.9)";
     const transitionColor = "rgba(147, 51, 234, 0.9)";
 
-    setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }, 1600);
-
     if (currentQuestionIndex === qaData.length - 1) {
         // Final CTA question:
         $triggerNext.hide();
@@ -434,22 +436,11 @@ $triggerNo.click(function () {
     const initialColor = "rgba(231, 76, 60, 0.9)";
     const transitionColor = "rgba(147, 51, 234, 0.9)";
 
-     // 🔼 Scroll to top
-     setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }, 1600);
-
     showNoModal(initialColor, transitionColor);
 });
 
 $triggerNext.click(function () {
     hideModal(); // Your existing function
-  
-    // Scroll to top smoothly after hiding modal
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
   });
 $closeButton.click(hideModal);
 
