@@ -174,7 +174,7 @@ function showModal(initialColor, transitionColor) {
      setTimeout(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         console.log('scroll happening now')
-    }, 2000);
+    }, 2500);
 }
 
 function showNoModal(initialColor, transitionColor) {
