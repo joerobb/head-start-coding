@@ -89,7 +89,7 @@ const $introRow = $(".intro-display-none");
 // Question and answer management
 const qaData = [
     {
-        question: "Do you have a child between the ages of 8 and 16 years old?",
+        question: "Do you have a child between the ages of 11 and 16 years old?",
         answerClass: "a-1",
         answerNoClass: "no-1"
     },
@@ -432,7 +432,15 @@ $triggerNo.click(function () {
     showNoModal(initialColor, transitionColor);
 });
 
-$triggerNext.click(hideModal);
+$triggerNext.click(function () {
+    hideModal(); // Your existing function
+  
+    // Scroll to top smoothly after hiding modal
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
 $closeButton.click(hideModal);
 
 // Initialize first question
