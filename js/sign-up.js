@@ -168,11 +168,13 @@ function showModal(initialColor, transitionColor) {
         easing: "easeInOutQuad",
     });
 
-    requestAnimationFrame(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
     $questionBox.hide();
+
+     // 👇 Delay scroll slightly to give DOM/animations time to settle
+     setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        console.log('scroll happening now')
+    }, 2000);
 }
 
 function showNoModal(initialColor, transitionColor) {
@@ -234,11 +236,12 @@ function showNoModal(initialColor, transitionColor) {
         easing: "easeInOutQuad",
     });
 
-    requestAnimationFrame(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
     $questionBox.hide();
+
+     // 👇 Delay scroll slightly to give DOM/animations time to settle
+     setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 50);
 }
 
 function hideModal() {
