@@ -137,9 +137,6 @@ var maxRadius = Math.sqrt(x * x + y * y);
 
 function showModal(initialColor, transitionColor) {
     // Show the modal overlay with animation
-
-    // 🔼 Scroll to top immediately
-    window.scrollTo({ top: 0, behavior: 'smooth' });
     
     $modalOverlay.show();
     $modal.css({ display: "block", opacity: 1 });
@@ -171,6 +168,10 @@ function showModal(initialColor, transitionColor) {
         easing: "easeInOutQuad",
     });
 
+    requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
     $questionBox.hide();
 }
 
@@ -180,9 +181,6 @@ function showNoModal(initialColor, transitionColor) {
         showNextQuestion();
         return;
     }
-
-    // 🔼 Scroll to top immediately
-     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     // Show the modal overlay with animation
     $modalOverlay.show();
@@ -234,6 +232,10 @@ function showNoModal(initialColor, transitionColor) {
         opacity: { value: [0, 1], duration: 1000 },
         duration: 1500,
         easing: "easeInOutQuad",
+    });
+
+    requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
     $questionBox.hide();
