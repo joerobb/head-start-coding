@@ -411,6 +411,9 @@ $triggerYes.click(function () {
     const initialColor = "rgba(46, 204, 113, 0.9)";
     const transitionColor = "rgba(147, 51, 234, 0.9)";
 
+     // 🔼 Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
     if (currentQuestionIndex === qaData.length - 1) {
         // Final CTA question:
         $triggerNext.hide();
@@ -429,6 +432,10 @@ $triggerYes.click(function () {
 $triggerNo.click(function () {
     const initialColor = "rgba(231, 76, 60, 0.9)";
     const transitionColor = "rgba(147, 51, 234, 0.9)";
+
+     // 🔼 Scroll to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
     showNoModal(initialColor, transitionColor);
 });
 
