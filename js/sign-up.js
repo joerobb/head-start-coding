@@ -140,6 +140,7 @@ function showModal(initialColor, transitionColor) {
     
     $modalOverlay.show();
     $modal.css({ display: "block", opacity: 1 });
+    $modal[0].scrollTo({ top: 0, behavior: 'smooth' });
     const currentAnswerClass = qaData[currentQuestionIndex].answerClass;        
     $(`.${currentAnswerClass}`).fadeIn();
     
@@ -169,12 +170,6 @@ function showModal(initialColor, transitionColor) {
     });
 
     $questionBox.hide();
-
-     // 👇 Delay scroll slightly to give DOM/animations time to settle
-     setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        console.log('scroll happening now 2500!')
-    }, 2500);
 }
 
 function showNoModal(initialColor, transitionColor) {
@@ -187,6 +182,7 @@ function showNoModal(initialColor, transitionColor) {
     // Show the modal overlay with animation
     $modalOverlay.show();
     $modal.css({ display: "block", opacity: 1 });
+    $modal[0].scrollTo({ top: 0, behavior: 'smooth' });
     const currentAnswerClass = qaData[currentQuestionIndex].answerNoClass;        
     $(`.${currentAnswerClass}`).fadeIn();
     
@@ -237,11 +233,6 @@ function showNoModal(initialColor, transitionColor) {
     });
 
     $questionBox.hide();
-
-     // 👇 Delay scroll slightly to give DOM/animations time to settle
-     setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 50);
 }
 
 function hideModal() {
