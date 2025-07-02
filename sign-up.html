@@ -83,6 +83,76 @@
             <div class="container px-lg-5" id="model">
                 <div class="row g-5 align-items-center intro-container">
                     <div id="fireworks-container"></div>
+                    
+                    <!-- Privacy Policy Modal -->
+                    <div id="privacy-modal" class="privacy-modal">
+                        <div class="privacy-modal-overlay"></div>
+                        <div class="privacy-modal-content">
+                            <div class="privacy-modal-header">
+                                <h2>Privacy Policy</h2>
+                                <span class="privacy-close">&times;</span>
+                            </div>
+                            <div class="privacy-modal-body">
+                                <h3>Information We Collect</h3>
+                                <p>We collect personal information that you voluntarily provide to us when you contact us about our coding courses, including:</p>
+                                <ul>
+                                    <li>Your name and contact details (email address, phone number)</li>
+                                    <li>Your child's name and age</li>
+                                    <li>Information about your child's interests and experience with technology</li>
+                                    <li>Any special requirements or preferences for lessons</li>
+                                </ul>
+
+                                <h3>How We Use Your Information</h3>
+                                <p>We use the information we collect to:</p>
+                                <ul>
+                                    <li>Provide information about our coding courses</li>
+                                    <li>Schedule and conduct coding lessons</li>
+                                    <li>Communicate with you about your child's progress</li>
+                                    <li>Send you updates about our services (with your consent)</li>
+                                    <li>Improve our educational programs</li>
+                                </ul>
+
+                                <h3>Information Sharing</h3>
+                                <p>We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy. We may share information with:</p>
+                                <ul>
+                                    <li>Our qualified tutors for lesson delivery purposes</li>
+                                    <li>Service providers who assist us in operating our website and conducting our business</li>
+                                    <li>Law enforcement or regulatory authorities when required by law</li>
+                                </ul>
+
+                                <h3>Data Security</h3>
+                                <p>We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+
+                                <h3>Your Rights</h3>
+                                <p>Under GDPR, you have the right to:</p>
+                                <ul>
+                                    <li>Access your personal data</li>
+                                    <li>Correct inaccurate personal data</li>
+                                    <li>Request deletion of your personal data</li>
+                                    <li>Object to processing of your personal data</li>
+                                    <li>Request data portability</li>
+                                    <li>Withdraw consent at any time</li>
+                                </ul>
+
+                                <h3>Contact Us</h3>
+                                <p>If you have any questions about this Privacy Policy, please contact us at hello@headstartcoding.com</p>
+
+                                <div class="privacy-consent">
+                                    <label class="privacy-checkbox-container">
+                                        <input type="checkbox" id="privacy-agreement">
+                                        <span class="privacy-checkmark"></span>
+                                        I have read and agree to the Privacy Policy and consent to the collection and use of my personal information as described above.
+                                    </label>
+                                </div>
+
+                                <div class="privacy-modal-footer">
+                                    <button id="privacy-decline" class="privacy-btn privacy-btn-secondary">Decline</button>
+                                    <button id="privacy-accept" class="privacy-btn privacy-btn-primary" disabled>Accept & Continue</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <!-- Overlay -->
                     <div class="modal-overlay">
                     </div>
@@ -295,7 +365,7 @@
                                             </div> -->
                                         
                                             <!-- Python Flip Card -->
-                                            <div class="col-lg-4 col-md-6 wow fadeInUp service-item-container service-item-container-intro" data-wow-delay="0.1s">
+                                            <div class="col-lg-4 col-md-6 wow fadeInUp align-items-center service-item-container service-item-container-intro" data-wow-delay="0.1s">
                                                 <a class="btn btn-square" href="#">Flip<i class="fa-solid fa-share"></i></a>
                                                 <div class="flip-container">
                                                     <div class="service-item d-flex flex-column text-center rounded flipper">
@@ -374,8 +444,8 @@
                                             <p class="cta-subtext">Use the links below to email us with your details or message us on WhatsApp.</p>
                                             <div class="cta-links">
                                             <!-- <a href="https://calendly.com/headstartcodingteam/30min" target="_blank" class="cta-button trigger trigger-email">Book taster session</a> -->
-                                            <a href="mailto:headstartcodingteam@gmail.com?subject=Interest%20in%20Coding%20Lessons" target="_blank" class="btn trigger trigger-email">Email Us</a>
-                                            <a href="https://wa.me/+447977196793?text=Hi!%20I'm%20interested%20in%20your%20coding%20courses!" target="_blank" class="btn trigger trigger-email">Message Us on WhatsApp</a>
+                                            <a href="mailto:headstartcodingteam@gmail.com?subject=Interest%20in%20Coding%20Lessons" target="_blank" class="btn trigger trigger-email privacy-contact-link" data-contact-type="email">Email Us</a>
+                                            <a href="https://wa.me/+447572592298?text=Hi!%20I'm%20interested%20in%20your%20coding%20courses!" target="_blank" class="btn trigger trigger-email privacy-contact-link" data-contact-type="whatsapp">Message Us on WhatsApp</a>
                                             </div>
                                         </div>
 

@@ -15,6 +15,108 @@
     // Initiate the wowjs
     new WOW().init();
 
+    // Privacy Policy Modal Functionality
+    const privacyModal = $('#privacy-modal');
+    const privacyCheckbox = $('#privacy-agreement');
+    const privacyAcceptBtn = $('#privacy-accept');
+    const privacyDeclineBtn = $('#privacy-decline');
+    const privacyCloseBtn = $('.privacy-close');
+    const privacyContactLinks = $('.privacy-contact-link');
+    let pendingContactAction = null;
+
+    // Enable/disable accept button based on checkbox
+    privacyCheckbox.on('change', function() {
+        privacyAcceptBtn.prop('disabled', !this.checked);
+    });
+
+    // Show privacy modal when contact links are clicked
+    privacyContactLinks.on('click', function(e) {
+        e.preventDefault();
+        const link = $(this);
+        const contactType = link.data('contact-type');
+        
+        // Store the pending action
+        pendingContactAction = {
+            url: link.attr('href'),
+            type: contactType
+        };
+        
+        // Show privacy modal
+        privacyModal.fadeIn(300);
+        
+        // Reset checkbox and button state
+        privacyCheckbox.prop('checked', false);
+        privacyAcceptBtn.prop('disabled', true);
+        
+        // Scroll to top of modal
+        $('.privacy-modal-body').scrollTop(0);
+    });
+
+    // Handle accept button
+    privacyAcceptBtn.on('click', function() {
+        if (pendingContactAction && privacyCheckbox.prop('checked')) {
+            // Store consent in localStorage for future visits
+            localStorage.setItem('privacyConsent', 'accepted');
+            localStorage.setItem('privacyConsentDate', new Date().toISOString());
+            
+            // Close modal
+            privacyModal.fadeOut(300);
+            
+            // Open the contact link after a brief delay
+            setTimeout(() => {
+                window.open(pendingContactAction.url, '_blank');
+                pendingContactAction = null;
+            }, 300);
+        }
+    });
+
+    // Handle decline button
+    privacyDeclineBtn.on('click', function() {
+        privacyModal.fadeOut(300);
+        pendingContactAction = null;
+        
+        // Optional: Show a message that they need to accept to continue
+        setTimeout(() => {
+            alert('You need to accept the Privacy Policy to contact us. Your privacy and data protection are important to us.');
+        }, 300);
+    });
+
+    // Handle close button
+    privacyCloseBtn.on('click', function() {
+        privacyModal.fadeOut(300);
+        pendingContactAction = null;
+    });
+
+    // Close modal when clicking outside of it
+    privacyModal.on('click', function(e) {
+        if (e.target === this) {
+            privacyModal.fadeOut(300);
+            pendingContactAction = null;
+        }
+    });
+
+    // Check if user has already consented
+    $(document).ready(function() {
+        const consentDate = localStorage.getItem('privacyConsentDate');
+        const consent = localStorage.getItem('privacyConsent');
+        
+        // Check if consent is still valid (e.g., within last 12 months)
+        if (consent === 'accepted' && consentDate) {
+            const consentTimestamp = new Date(consentDate);
+            const twelveMonthsAgo = new Date();
+            twelveMonthsAgo.setMonth(twelveMonthsAgo.getMonth() - 12);
+            
+            if (consentTimestamp > twelveMonthsAgo) {
+                // Consent is still valid, allow direct contact
+                privacyContactLinks.off('click').on('click', function(e) {
+                    // Don't prevent default, allow normal link behavior
+                    return true;
+                });
+            }
+        }
+    });
+
+
     //Overlay js
     var $navbarToggler = $('.navbar .navbar-toggler');
     var $navbarClose = $('.navbar .navbar-close');
@@ -72,7 +174,36 @@
     $nav.on("click", function() {
         $navbarToggler.show();
     });
-      
+
+    // Sticky Navbar
+
+    // var $navbarContainer = $('#navbarContainer');
+
+    // if ($('#mobile-indicator').is(':visible')) {
+    //     $('.navbar .navbar-collapse .navbar-nav a').on("click", function () {
+    //         $overlay.toggle(500);
+    //         $navbarCollapse.toggleClass('show');
+    //         $navbarClose.toggle();
+    //     });
+    
+    //     $(window).scroll(function () {
+    //         if ($(this).scrollTop() > 45) {
+    //             $navbarContainer.removeClass('sticky shadow-sm');
+    //         } else {
+    //             $navbarContainer.removeClass('sticky shadow-sm');
+    //         }
+    //     });
+    
+    // } else {
+    //     $(window).scroll(function () {
+    //         if ($(this).scrollTop() > 45) {
+    //             $navbarContainer.addClass('sticky shadow-sm');
+    //         } else {
+    //             $navbarContainer.removeClass('sticky shadow-sm');
+    //         }
+    //     });
+    // }
+
     //Modal JS
 
     const $modalOverlay = $(".modal-overlay");
@@ -126,33 +257,6 @@
 
         $modal.slideToggle( "slow" );
     });
-   
-
-
-    // Sticky Navbar
-
-    if($('#mobile-indicator').is(':visible')) {
-        $('.navbar .navbar-collapse .navbar-nav a').on("click", function() {
-            $overlay.toggle(500);
-            $navbarCollapse.toggleClass('show');
-            $navbarClose.toggle();
-        });
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 45) {
-                $('.navbar').removeClass('sticky-top shadow-sm');
-            } else {
-                $('.navbar').removeClass('sticky-top shadow-sm');
-            }
-        });
-    } else {
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 45) {
-                $('.navbar').addClass('sticky-top shadow-sm');
-            } else {
-                $('.navbar').removeClass('sticky-top shadow-sm');
-            }
-        });
-    }
 
     //Rotate logo on scroll
 
@@ -163,7 +267,7 @@
            //Determine the amount to rotate by.
            var deg = window.scrollY*(720/bodyHeight);
      
-           $(".sticky-top.navbar-light .logo-color img").css({
+           $("#navbarContainer.sticky .navbar-light .logo-color img").css({
              "transform": "rotate("+deg+"deg)",
            });
      
@@ -231,6 +335,39 @@
             }
         }
     });
+
+
+    // Student carousel (mobile/tablet only)
+    $(".student-carousel").owlCarousel({
+        autoplay: true,
+        autoplayTimeout: 6000,
+        smartSpeed: 1200,
+        margin: 30,
+        dots: false,
+        nav: true,
+        navText: [
+            '<i class="bi bi-chevron-left"></i>',
+            '<i class="bi bi-chevron-right"></i>'
+        ],
+        loop: true,
+        center: true,
+        items: 5,
+        responsive: {
+            0: {
+                items: 1
+            },
+            480: {
+                items: 1
+            },
+            768: {
+                items: 1
+            },
+            992: {
+                items: 3
+            }
+        }
+    });
+
 
 
     // Portfolio isotope and filter
